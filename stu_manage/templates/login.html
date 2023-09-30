@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block head %}
+<h1 class="text-center text-dark">Login</h1>
+<div class="container offset-6 m-5 ">
+    <div class="row">
+        <div class="col-3 ">
+<form action="" method="post" novalidate class="mt-4">
+
+{% csrf_token %}
+
+<input type="text" class='form-control' name="username">username
+<input type="password" class='form-control' name="password">password
+
+<input type="submit" class=" btn btn-info offset-2 mt-2" value="submit">
+</form>
+</div>
+</div>
+</div>
+
+{% endblock head %}

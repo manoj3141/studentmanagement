@@ -1,0 +1,12 @@
+
+<h4>{{w}}</h4>
+{% if e  %}
+<p style="color: blue;"><b>Today's date:  </b>{{e.date}}</p>
+<p style="color: red;"><b>The time is now: </b>{{e.time}}</p>
+{% endif %}
+{% for v in data.values %}
+<!-- {{v}} -->
+<p>name:{{v.name}}</p>
+<p>age:{{v.age}}</p>
+<p>subject:{{v.subject}}</p>
+{% endfor %}

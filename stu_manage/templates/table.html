@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block head %}
+
+<div class="container">
+<div class="row">
+
+<div class="col-7 offset-3 mt-4">
+    <table class="table table-striped">
+<tr>
+<th>ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email id</th>
+<th>Subject</th>
+<th >Operations</th>
+</tr>
+{% for i in d %}
+<tr>
+    <td>{{i.id}}</td>
+    <td>{{i.fname}}</td>
+    <td>{{i.lname}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.subject}}</td>
+    <td><a class="btn btn-info btn-sm" href='{% url "update" i.id %}'>update</a>
+    <form action="{% url 'delete' i.id %}" method="post" class="d-inline">
+        {% csrf_token %}
+<input type="submit" value="remove" class="btn btn-danger  btn-sm">
+
+    </form>
+    </td>
+
+</tr>
+{% endfor %}
+    </table>
+</div >
+<div class="row">
+    <div class="col-2 offset-6 mt-2 ">
+<a class="btn btn-info btn-sm" href="{% url 'home' %}">Add Student</a></div>
+</div>
+</div>
+
+</div>
+{% endblock head %}
